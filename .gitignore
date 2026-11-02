@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.pem
+*.key
+reports/
+report*.json
+demo-report*.json
+*.zip
