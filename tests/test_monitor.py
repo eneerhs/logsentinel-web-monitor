@@ -156,7 +156,8 @@ class CliTests(unittest.TestCase):
 
     def test_invalid_arguments(self):
         for option, value in [("--checks", "0"), ("--checks", "1.5"), ("--checks", "101"),
-                              ("--interval", "nan"), ("--interval", "-1"), ("--timeout", "inf")]:
+                              ("--interval", "nan"), ("--interval", "-1"), ("--timeout", "inf"),
+                              ("--checks", "9" * 1000)]:
             with self.subTest(option=option, value=value):
                 result = self.command("--url", "https://example.com", option, value)
                 self.assertEqual(result.returncode, 2)
