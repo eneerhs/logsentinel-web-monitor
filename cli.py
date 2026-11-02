@@ -2,7 +2,6 @@
 
 import argparse
 import json
-import math
 import sys
 import time
 from pathlib import Path
@@ -17,7 +16,7 @@ def bounded_number(value, minimum, maximum, integer=False):
         number = int(value) if integer else float(value)
     except ValueError as error:
         raise argparse.ArgumentTypeError("Expected a number") from error
-    if not math.isfinite(number) or not minimum <= number <= maximum:
+    if not minimum <= number <= maximum:
         raise argparse.ArgumentTypeError(f"Value must be between {minimum} and {maximum}")
     return number
 
